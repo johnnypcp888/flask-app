@@ -6,8 +6,10 @@ from sklearn.preprocessing import StandardScaler
 import xgboost as xgb
 
 # Use pickle to load in the pre-trained model.
-with gzip.open(f'model/model2.pklz', 'rb') as f:
-    model = pickle.load(f)
+#with gzip.open(f'model/model2.pklz', 'rb') as f:
+f = gzip.open('testPickleFile.pklz','rb')
+model = pickle.load(f)
+f.close()
 
 app = flask.Flask(__name__, template_folder='templates')
 
