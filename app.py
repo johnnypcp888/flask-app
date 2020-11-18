@@ -7,7 +7,7 @@ import xgboost as xgb
 
 # Use pickle to load in the pre-trained model.
 #with gzip.open(f'model/model2.pklz', 'rb') as f:
-f = gzip.open('testPickleFile.pklz','rb')
+f = gzip.open('model/model2.pklz','rb')
 model = pickle.load(f)
 f.close()
 
