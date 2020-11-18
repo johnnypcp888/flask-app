@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title>Loan Rate Category Model</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Inquiries Last 6 months:
+        <input name="Inquiries_Last_6Mo" type="number" required>
+        <br>
+        <br> Loan Amount Requested:
+        <input name="Loan_Amount_Requested" type="number" required>
+        <br>
+        <br> Annual Income:
+        <input name="Annual_Income" type="number" required>
+        <br>
+		<br> Income Not Verified:
+        <input name="Income_Verified_2" type="text" required>
+        <br>
+		<br> Months Since Delinquency:
+        <input name="Months_Since_Deliquency" type="number" required>
+        <br>
+		<br> Debt To Income:
+        <input name="Debt_To_Income" type="number" required>
+        <br>
+		<br> Number of Open Accounts:
+        <input name="Number_Open_Accounts" type="number" required>
+        <br>
+		<br> Total number of Accounts:
+        <input name="Total_Accounts" type="number" required>
+        <br>
+		<br> Purpose of Loan - Credit Card:
+        <input name="Purpose_Of_Loan_1" type="text" required>
+        <br>
+		<br> Home Owner - Rent:
+        <input name="Home_Owner_1" type="text" required>
+        <br>
+		<br> Income Source Verified:
+        <input name="Income_Verified_1" type="text" required>
+        <br>
+		<br> Other Purpose of Loan:
+        <input name="Purpose_Of_Loan_3" type="text" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+        {% for variable, value in original_input.items() %}
+            <b>{{ variable }}</b> : {{ value }}
+        {% endfor %}
+        <br>
+        <br> Predicted Loan Rate Category:
+           <p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+
+</html>
