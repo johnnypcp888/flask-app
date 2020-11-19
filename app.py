@@ -8,7 +8,7 @@ import xgboost as xgb
 # Use pickle to load in the pre-trained model.
 #with open('model/global.model','rb') as f:
     #model = pickle.load(f)
-model = pd.read_pickle("model/model4.sav")
+model = pd.read_pickle("model/model6.sav")
 #f = gzip.open('model/model2.pklz','rb')
 #f.close()
 
