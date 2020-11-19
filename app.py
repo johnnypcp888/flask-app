@@ -4,10 +4,13 @@ import pandas as pd
 from flask import Flask, jsonify, request
 from sklearn.preprocessing import StandardScaler
 import xgboost as xgb
+from joblib import dump
+from joblib import load
 
 # Use pickle to load in the pre-trained model.
-model = xgb.Booster() 
-model.load_model('model/xgb_model.sav')
+model = load('model/xgb_model2.sav')
+#model = xgb.Booster() 
+#model.load_model('model/xgb_model.sav')
 #with open('model/xgb_model.pkl','rb') as f:
     #model = pickle.load(f)
 #model = pd.read_pickle("model/bst_model.pkl")
