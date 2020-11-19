@@ -6,9 +6,9 @@ from sklearn.preprocessing import StandardScaler
 import xgboost as xgb
 
 # Use pickle to load in the pre-trained model.
-#with open('model/global.model','rb') as f:
-    #model = pickle.load(f)
-model = pd.read_pickle("model/bst_model.pkl")
+with open('model/xgb_model.pkl','rb') as f:
+    model = pickle.load(f)
+#model = pd.read_pickle("model/bst_model.pkl")
 #f = gzip.open('model/model2.pklz','rb')
 #f.close()
 
